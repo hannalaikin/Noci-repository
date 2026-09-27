@@ -12,7 +12,7 @@ FASTEST WAY LIVE (about 5 minutes, free)
 BEFORE YOU SEND TRAFFIC
 - Buttons currently go to https://intheb.ag — change if the quiz moves
 - Add your Meta + TikTok pixels where the comment says PIXELS in index.html
-- Add favicon.ico to this folder
+- favicon.ico and favicon.png are in this folder
 - /privacy and /terms in the footer are not written yet. You need a real
   privacy policy before collecting photos.
 - Replace styling.shopnoci.com in the meta tags with your real domain,
