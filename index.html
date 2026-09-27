@@ -325,15 +325,22 @@ section{padding-block:clamp(56px,9vw,120px)}
 <section class="sstrip">
   <div class="wrap">
     <div class="sstrip-in">
-      <span class="eyebrow">Your stylists · Hand-picked</span>
-      <div class="sfaces">
-        <a href="#stylists" class="sface"><img class="pic" src="img/stylist-5.webp" alt="" loading="lazy"><span><b>Noor</b>Red carpet and events</span></a>
-        <a href="#stylists" class="sface"><img class="pic" src="img/stylist-2.webp" alt="" loading="lazy"><span><b>Priya</b>Trained tailor</span></a>
-        <a href="#stylists" class="sface"><img class="pic" src="img/stylist-3.webp" alt="" loading="lazy"><span><b>Daniela</b>Film and TV wardrobe</span></a>
-        <a href="#stylists" class="sface"><img class="pic" src="img/stylist-4.webp" alt="" loading="lazy"><span><b>Annika</b>Ex luxury personal shopper</span></a>
+      <span class="eyebrow">Your stylists</span>
+      <div class="sfaces marquee" aria-label="Your stylists">
+        <div class="track sfaces-track">
+        <a href="#stylists" class="sface"><img class="pic" src="img/stylist-5.webp" alt="" loading="lazy"><span><b>Noor</b>Dressing for the event</span></a>
+        <a href="#stylists" class="sface"><img class="pic" src="img/stylist-2.webp" alt="" loading="lazy"><span><b>Priya</b>Nothing ever fits right</span></a>
+        <a href="#stylists" class="sface"><img class="pic" src="img/stylist-3.webp" alt="" loading="lazy"><span><b>Daniela</b>The colors that wash you out</span></a>
+        <a href="#stylists" class="sface"><img class="pic" src="img/stylist-4.webp" alt="" loading="lazy"><span><b>Annika</b>A full closet, nothing to wear</span></a>
         <a href="#stylists" class="sface"><img class="pic" src="img/stylist-6.webp" alt="" loading="lazy"><span><b>Simone</b>Petite and extended sizing</span></a>
+        <a href="#stylists" class="sface"><img class="pic" src="img/stylist-5.webp" alt="" loading="lazy"><span><b>Noor</b>Dressing for the event</span></a>
+        <a href="#stylists" class="sface"><img class="pic" src="img/stylist-2.webp" alt="" loading="lazy"><span><b>Priya</b>Nothing ever fits right</span></a>
+        <a href="#stylists" class="sface"><img class="pic" src="img/stylist-3.webp" alt="" loading="lazy"><span><b>Daniela</b>The colors that wash you out</span></a>
+        <a href="#stylists" class="sface"><img class="pic" src="img/stylist-4.webp" alt="" loading="lazy"><span><b>Annika</b>A full closet, nothing to wear</span></a>
+        <a href="#stylists" class="sface"><img class="pic" src="img/stylist-6.webp" alt="" loading="lazy"><span><b>Simone</b>Petite and extended sizing</span></a>
+        </div>
       </div>
-      <span class="eyebrow sstrip-r">Access to every brand, from designer to high street</span>
+      <span class="eyebrow sstrip-r">Matched to the thing you actually struggle with</span>
     </div>
   </div>
 </section>
@@ -1105,13 +1112,16 @@ section{padding-block:clamp(56px,9vw,120px)}
 /* stylist strip */
 .sstrip{padding-block:22px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .sstrip-in{display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:space-between}
-.sfaces{display:flex;gap:10px;flex-wrap:wrap}
+.sfaces{flex:1;min-width:0}
+.sfaces-track{gap:10px;animation-duration:28s}
+.sfaces:hover .sfaces-track{animation-play-state:paused}
 .sface{display:flex;align-items:center;gap:8px;text-decoration:none;color:inherit;padding:4px 10px 4px 4px;border-radius:999px;border:1px solid var(--line);background:var(--card)}
 .sface img{width:36px;height:36px;border-radius:50%;object-fit:cover;object-position:center 20%}
 .sface span{display:flex;flex-direction:column;line-height:1.1;font-size:11px;color:var(--muted)}
 .sface b{font-size:13px;color:var(--ink);font-weight:600}
 .sstrip-r{max-width:34ch;text-align:right;line-height:1.5}
-@media (max-width:900px){.sstrip-in{justify-content:flex-start}.sstrip-r{text-align:left;max-width:none}.sfaces{overflow-x:auto;flex-wrap:nowrap;width:100%;padding-bottom:4px;scrollbar-width:none}.sface{flex:none}}
+.sface{flex:none}
+@media (max-width:900px){.sstrip-in{justify-content:flex-start}.sstrip-r{text-align:left;max-width:none}.sfaces{width:100%}}
 /* sticky cta */
 .sticky-cta{display:none}
 @media (max-width:900px){
@@ -1171,15 +1181,15 @@ footer{border-top:1px solid var(--line);padding-block:36px 48px;color:var(--mute
   <div class="wrap">
     <div class="head">
       <span class="eyebrow">Stylists</span>
-      <h2>Hand-picked. <em>Working. Human.</em></h2>
-      <p class="sub">Set, editorial and private-client stylists with access to every brand in the world. Each works with a small number of clients at a time, so she actually knows yours.</p>
+      <h2>Each one solves <em>a different problem.</em></h2>
+      <p class="sub">Set, editorial and private-client stylists, matched to what you struggle with most. Each works with a small number of clients at a time, so she knows yours.</p>
     </div>
     <div class="stylists">
-      <div class="card scard"><div class="portrait"><img class="pic" src="img/stylist-5.webp" alt="Stylist portrait 5" loading="lazy"></div><h4>Noor Haddad</h4><p><b style="font-weight:600;color:var(--ink)">Red carpet and events</b><br>Formerly on a celebrity styling team, LA. 9 years.</p></div>
-      <div class="card scard"><div class="portrait"><img class="pic" src="img/stylist-2.webp" alt="Stylist portrait 2" loading="lazy"></div><h4>Priya Raman</h4><p><b style="font-weight:600;color:var(--ink)">Fit and tailoring</b><br>Trained tailor, Savile Row apprenticeship. 11 years.</p></div>
-      <div class="card scard"><div class="portrait"><img class="pic" src="img/stylist-3.webp" alt="Stylist portrait 3" loading="lazy"></div><h4>Daniela Cruz</h4><p><b style="font-weight:600;color:var(--ink)">Color and editorial</b><br>Wardrobe on film and TV sets. 8 years.</p></div>
-      <div class="card scard"><div class="portrait"><img class="pic" src="img/stylist-4.webp" alt="Stylist portrait 4" loading="lazy"></div><h4>Annika Roth</h4><p><b style="font-weight:600;color:var(--ink)">Capsule wardrobes</b><br>Ex luxury personal shopper, Nordstrom and Net-a-Porter.</p></div>
-      <div class="card scard"><div class="portrait"><img class="pic" src="img/stylist-6.webp" alt="Stylist portrait 6" loading="lazy"></div><h4>Simone Okafor</h4><p><b style="font-weight:600;color:var(--ink)">Petite and extended sizing</b><br>Former fit model turned stylist. 7 years.</p></div>
+      <div class="card scard"><div class="portrait"><img class="pic" src="img/stylist-5.webp" alt="Stylist portrait 5" loading="lazy"></div><h4>Noor Haddad</h4><p><b style="font-weight:600;color:var(--ink)">The event</b><br>Weddings, galas, the dinner that matters. Nine years dressing women for rooms where everyone looks.</p></div>
+      <div class="card scard"><div class="portrait"><img class="pic" src="img/stylist-2.webp" alt="Stylist portrait 2" loading="lazy"></div><h4>Priya Raman</h4><p><b style="font-weight:600;color:var(--ink)">The fit</b><br>Trained as a tailor before she styled. She reads why a piece pulls, gaps, or drops, and what to buy instead.</p></div>
+      <div class="card scard"><div class="portrait"><img class="pic" src="img/stylist-3.webp" alt="Stylist portrait 3" loading="lazy"></div><h4>Daniela Cruz</h4><p><b style="font-weight:600;color:var(--ink)">The color</b><br>Eight years in film and television wardrobe. She finds the palette that makes your face the brightest thing in the frame.</p></div>
+      <div class="card scard"><div class="portrait"><img class="pic" src="img/stylist-4.webp" alt="Stylist portrait 4" loading="lazy"></div><h4>Annika Roth</h4><p><b style="font-weight:600;color:var(--ink)">The closet</b><br>Former luxury personal shopper. She turns a full closet with nothing to wear into a working wardrobe.</p></div>
+      <div class="card scard"><div class="portrait"><img class="pic" src="img/stylist-6.webp" alt="Stylist portrait 6" loading="lazy"></div><h4>Simone Okafor</h4><p><b style="font-weight:600;color:var(--ink)">The proportions</b><br>Petite and extended sizing, and every body the racks were not cut for. She knows where the good pieces hide.</p></div>
     </div>
   </div>
 </section>
