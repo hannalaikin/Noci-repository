@@ -1071,9 +1071,10 @@ section{padding-block:clamp(56px,9vw,120px)}
 .hcard .mock{background:var(--bg-soft);border:1px solid var(--line);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:10px;min-height:190px}
 .drop{border:1px dashed var(--line-2);border-radius:12px;padding:14px;text-align:center;font-size:13px;color:var(--muted)}
 .poses{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.poses div{aspect-ratio:3/4;border-radius:10px;background:var(--photo);position:relative;overflow:hidden}
+.poses figure{margin:0;display:flex;flex-direction:column;gap:6px}
+.poses figure .shot{aspect-ratio:3/4;border-radius:10px;background:var(--photo);overflow:hidden}
 .poses div svg{position:absolute;inset:0;width:100%;height:100%}
-.poses small{position:absolute;left:0;right:0;bottom:6px;text-align:center;font-family:var(--mono);font-size:8px;letter-spacing:.08em;text-transform:uppercase;color:#3E2E25}
+.poses figcaption{text-align:center;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .marks{display:flex;flex-wrap:wrap;gap:6px}
 .marks span{font-size:12px;padding:6px 10px;border-radius:999px;background:var(--card);border:1px solid var(--line);color:var(--ink-2)}
 
@@ -1289,10 +1290,7 @@ footer{border-top:1px solid var(--line);padding-block:36px 48px;color:var(--mute
         <div class="mock">
           <div class="drop">Drag and drop photos to upload</div>
           <span class="mono" style="color:var(--muted)">Poses required</span>
-          <div class="poses">
-            <div><img class="pic" src="img/pair3-wearing.webp" alt="Front view upload example" loading="lazy"><small>Front</small></div>
-            <div><img class="pic" src="img/pair1-wearing.webp" alt="Side view upload example" loading="lazy"><small>Side</small></div>
-            <div><img class="pic" src="img/pair1-styled.webp" alt="Best-outfit upload example" loading="lazy"><small>Best outfit</small></div>
+          <div class="poses"><figure><div class="shot"><img class="pic" src="img/pose-front.webp" alt="Front view upload example" loading="lazy"></div><figcaption>Front</figcaption></figure><figure><div class="shot"><img class="pic" src="img/pose-side.webp" alt="Side view upload example" loading="lazy"></div><figcaption>Side</figcaption></figure><figure><div class="shot"><img class="pic" src="img/pose-best.webp" alt="Best outfit upload example" loading="lazy"></div><figcaption>Best outfit</figcaption></figure>
           </div>
         </div>
       </div>
@@ -1374,7 +1372,7 @@ footer{border-top:1px solid var(--line);padding-block:36px 48px;color:var(--mute
           <span class="t">Thursday 6:12 PM</span>
           <div class="m me">Wedding Saturday. Garden, 4pm, "cocktail". I have nothing.</div>
           <div class="m them">You have the espresso slip dress. Send me a photo of it with the tan sandals and the gold hoops, I'll check the hem.</div>
-          <div class="m me" style="padding:6px"><img src="img/pair2-wearing.webp" alt="Photo sent to the stylist" style="display:block;width:104px;height:130px;object-fit:cover;border-radius:10px"></div>
+          <div class="m me" style="padding:6px"><img src="img/thread-slipdress.webp" alt="Espresso slip dress with tan sandals, sent to the stylist" style="display:block;width:104px;height:130px;object-fit:cover;border-radius:10px"></div>
           <div class="m them">Hem it 1 in and you're done. If you want one new thing, the ivory wrap top under it reads more "garden". Want me to pull it in your size?</div>
         </div>
       </div>
