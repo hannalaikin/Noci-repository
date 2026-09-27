@@ -162,7 +162,8 @@ section{padding-block:clamp(56px,9vw,120px)}
 /* hero film (full bleed) */
 .hero-film{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;background:#1B1411;color:#F7F3EE;padding:0}
 .hero-video{position:absolute;inset:0;z-index:0}
-.hero-video video{width:100%;height:100%;object-fit:cover;object-position:center 18%;display:block}
+.hero-video video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 18%;display:block;opacity:0;transition:opacity .6s ease}
+.hero-video video.on{opacity:1}
 .hero-veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(27,20,17,.35) 0%,rgba(27,20,17,0) 30%,rgba(27,20,17,.25) 55%,rgba(27,20,17,.92) 100%)}
 .hero-copy{position:relative;z-index:1;width:100%;padding-block:0 clamp(28px,5vw,64px);display:flex;flex-direction:column;gap:16px;max-width:1180px}
 .hero-copy h1{color:#F7F3EE;font-size:clamp(38px,6.4vw,76px);max-width:14ch}
@@ -305,7 +306,8 @@ section{padding-block:clamp(56px,9vw,120px)}
 <!-- HERO -->
 <section class="hero-film" id="hero">
   <div class="hero-video" aria-hidden="true">
-    <video id="heroVideo" autoplay muted loop playsinline poster="img/pair7-styled.webp" data-clips="video/hero-a.mp4,video/result.mp4,video/hero-b.mp4"><source src="video/hero-a.mp4" type="video/mp4"></video>
+    <video class="hv on" id="hv0" autoplay muted playsinline preload="auto" poster="img/pair7-styled.webp" src="video/hero-a.mp4"></video>
+    <video class="hv" id="hv1" muted playsinline preload="auto" src="video/result.mp4"></video>
     <div class="hero-veil"></div>
   </div>
   <div class="wrap hero-copy">
@@ -323,15 +325,15 @@ section{padding-block:clamp(56px,9vw,120px)}
 <section class="sstrip">
   <div class="wrap">
     <div class="sstrip-in">
-      <span class="eyebrow">Your stylists</span>
+      <span class="eyebrow">Your stylists · A small, hand-picked roster</span>
       <div class="sfaces">
-        <a href="#stylists" class="sface"><img class="pic" src="img/stylist-5.webp" alt="" loading="lazy"><span><b>Noor</b>Occasion and events</span></a>
-        <a href="#stylists" class="sface"><img class="pic" src="img/stylist-2.webp" alt="" loading="lazy"><span><b>Priya</b>Fit, trained tailor</span></a>
-        <a href="#stylists" class="sface"><img class="pic" src="img/stylist-3.webp" alt="" loading="lazy"><span><b>Daniela</b>Color, 8 years on set</span></a>
-        <a href="#stylists" class="sface"><img class="pic" src="img/stylist-4.webp" alt="" loading="lazy"><span><b>Annika</b>Capsule wardrobes</span></a>
-        <a href="#stylists" class="sface"><img class="pic" src="img/stylist-6.webp" alt="" loading="lazy"><span><b>Simone</b>Petite and extended</span></a>
+        <a href="#stylists" class="sface"><img class="pic" src="img/stylist-5.webp" alt="" loading="lazy"><span><b>Noor</b>Red carpet and events</span></a>
+        <a href="#stylists" class="sface"><img class="pic" src="img/stylist-2.webp" alt="" loading="lazy"><span><b>Priya</b>Trained tailor</span></a>
+        <a href="#stylists" class="sface"><img class="pic" src="img/stylist-3.webp" alt="" loading="lazy"><span><b>Daniela</b>Film and TV wardrobe</span></a>
+        <a href="#stylists" class="sface"><img class="pic" src="img/stylist-4.webp" alt="" loading="lazy"><span><b>Annika</b>Ex luxury personal shopper</span></a>
+        <a href="#stylists" class="sface"><img class="pic" src="img/stylist-6.webp" alt="" loading="lazy"><span><b>Simone</b>Petite and extended sizing</span></a>
       </div>
-      <span class="eyebrow sstrip-r">Shops your closet first, then COS, Everlane, Aritzia, Sézane, Madewell and more</span>
+      <span class="eyebrow sstrip-r">Each stylist takes a limited number of clients per season</span>
     </div>
   </div>
 </section>
@@ -1169,15 +1171,15 @@ footer{border-top:1px solid var(--line);padding-block:36px 48px;color:var(--mute
   <div class="wrap">
     <div class="head">
       <span class="eyebrow">Stylists</span>
-      <h2>Styled by humans with <em>taste</em></h2>
-      <p class="sub">Working stylists, real taste, and a person you can text.</p>
+      <h2>Hand-picked. <em>Working. Human.</em></h2>
+      <p class="sub">We take on a small roster of stylists with real set, editorial and private-client experience. Each one works with a handful of clients a season, so she actually knows yours.</p>
     </div>
     <div class="stylists">
-      <div class="card scard"><div class="portrait"><img class="pic" src="img/stylist-5.webp" alt="Stylist portrait 5" loading="lazy"></div><h4>Noor Haddad</h4><p>Occasion and event dressing</p></div>
-      <div class="card scard"><div class="portrait"><img class="pic" src="img/stylist-2.webp" alt="Stylist portrait 2" loading="lazy"></div><h4>Priya Raman</h4><p>Fit and proportion. Trained as a tailor</p></div>
-      <div class="card scard"><div class="portrait"><img class="pic" src="img/stylist-3.webp" alt="Stylist portrait 3" loading="lazy"></div><h4>Daniela Cruz</h4><p>Color and contrast. 8 years on set</p></div>
-      <div class="card scard"><div class="portrait"><img class="pic" src="img/stylist-4.webp" alt="Stylist portrait 4" loading="lazy"></div><h4>Annika Roth</h4><p>Tailoring and capsule wardrobes</p></div>
-      <div class="card scard"><div class="portrait"><img class="pic" src="img/stylist-6.webp" alt="Stylist portrait 6" loading="lazy"></div><h4>Simone Okafor</h4><p>Petite and extended sizing</p></div>
+      <div class="card scard"><div class="portrait"><img class="pic" src="img/stylist-5.webp" alt="Stylist portrait 5" loading="lazy"></div><h4>Noor Haddad</h4><p><b style="font-weight:600;color:var(--ink)">Red carpet and events</b><br>Formerly on a celebrity styling team, LA. 9 years.</p></div>
+      <div class="card scard"><div class="portrait"><img class="pic" src="img/stylist-2.webp" alt="Stylist portrait 2" loading="lazy"></div><h4>Priya Raman</h4><p><b style="font-weight:600;color:var(--ink)">Fit and tailoring</b><br>Trained tailor, Savile Row apprenticeship. 11 years.</p></div>
+      <div class="card scard"><div class="portrait"><img class="pic" src="img/stylist-3.webp" alt="Stylist portrait 3" loading="lazy"></div><h4>Daniela Cruz</h4><p><b style="font-weight:600;color:var(--ink)">Color and editorial</b><br>Wardrobe on film and TV sets. 8 years.</p></div>
+      <div class="card scard"><div class="portrait"><img class="pic" src="img/stylist-4.webp" alt="Stylist portrait 4" loading="lazy"></div><h4>Annika Roth</h4><p><b style="font-weight:600;color:var(--ink)">Capsule wardrobes</b><br>Ex luxury personal shopper, Nordstrom and Net-a-Porter.</p></div>
+      <div class="card scard"><div class="portrait"><img class="pic" src="img/stylist-6.webp" alt="Stylist portrait 6" loading="lazy"></div><h4>Simone Okafor</h4><p><b style="font-weight:600;color:var(--ink)">Petite and extended sizing</b><br>Former fit model turned stylist. 7 years.</p></div>
     </div>
   </div>
 </section>
@@ -1493,16 +1495,26 @@ footer{border-top:1px solid var(--line);padding-block:36px 48px;color:var(--mute
     window.addEventListener('scroll', onSc, {passive:true}); onSc();
   }
 
-  // Hero film: alternate clips, fall back to poster if a clip is missing
-  var hv = document.getElementById('heroVideo');
-  if (hv){
-    var clips = (hv.getAttribute('data-clips') || '').split(',').filter(Boolean), ci = 0;
-    hv.removeAttribute('loop');
-    var play = function(){ hv.src = clips[ci % clips.length]; hv.load(); hv.play().catch(function(){}); };
-    hv.addEventListener('ended', function(){ ci++; play(); });
-    hv.addEventListener('error', function(){ if (clips.length > 1){ clips.splice(ci % clips.length, 1); if (clips.length) play(); } });
-    if (clips.length) play();
+  // Hero film: two stacked players, crossfade between clips (autoplay-safe)
+  var clips = ['video/hero-a.mp4','video/result.mp4','video/hero-b.mp4'];
+  var v = [document.getElementById('hv0'), document.getElementById('hv1')];
+  if (v[0] && v[1]){
+    var cur = 0, idx = 0;
+    var tryPlay = function(el){ var p = el.play(); if (p && p.catch) p.catch(function(){}); };
+    var swap = function(){
+      var nxt = 1 - cur; idx = (idx + 1) % clips.length;
+      v[nxt].src = clips[idx]; v[nxt].load();
+      v[nxt].oncanplay = function(){ v[nxt].oncanplay = null; v[nxt].currentTime = 0; tryPlay(v[nxt]); v[nxt].classList.add('on'); v[cur].classList.remove('on'); cur = nxt; };
+    };
+    v.forEach(function(el){ el.addEventListener('ended', function(){ if (el === v[cur]) swap(); }); el.addEventListener('error', function(){ if (el === v[cur]) swap(); }); });
+    tryPlay(v[0]);
+    // iOS: retry on first touch/scroll if autoplay was blocked
+    var kick = function(){ if (v[cur].paused) tryPlay(v[cur]); };
+    ['touchstart','scroll','click'].forEach(function(e){ window.addEventListener(e, kick, {passive:true, once:true}); });
+    document.addEventListener('visibilitychange', function(){ if (!document.hidden) kick(); });
   }
+  // analysis-section video: same autoplay kick
+  document.querySelectorAll('.an-bg video').forEach(function(el){ var p = el.play(); if (p && p.catch) p.catch(function(){}); ['touchstart','scroll'].forEach(function(e){ window.addEventListener(e, function(){ if (el.paused) el.play().catch(function(){}); }, {passive:true, once:true}); }); });
 
   // Gallery counter + buttons
   var g = document.getElementById('gallery');
