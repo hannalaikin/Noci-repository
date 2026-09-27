@@ -190,9 +190,12 @@ section{padding-block:clamp(56px,9vw,120px)}
 .pic{display:block;width:100%;height:100%;object-fit:cover;object-position:center center}
 .pic.top{object-position:center 10%}
 .rows{gap:8px;max-width:760px}
-.fcard.sit{text-decoration:none;color:inherit}
-.fcard.sit h4{font-size:15px}
-.fcard.sit:hover{border-color:var(--line-2)}
+.sitgrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;max-width:1000px}
+@media (max-width:900px){.sitgrid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:640px){.sitgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.sit{display:flex;align-items:center;gap:10px;padding:8px;border-radius:12px;border:1px solid var(--line);background:var(--card);text-decoration:none;color:var(--ink);font-size:13px;line-height:1.25;font-weight:500}
+.sit img{width:40px;height:40px;border-radius:8px;flex:none;object-fit:cover}
+.sit:hover{border-color:var(--line-2)}
 .figwrap{position:relative;width:100%;height:100%}
 .figwrap .marks{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
 .photo .lbl{position:absolute;left:12px;bottom:12px;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;background:rgba(37,24,17,.86);color:#F7F3EE;padding:6px 10px;border-radius:999px}
@@ -727,17 +730,17 @@ section{padding-block:clamp(56px,9vw,120px)}
       <h2>What do you want the most help with <em>right now?</em></h2>
       <p class="sub">Pick the one that sounds like you. That's the first question of the quiz.</p>
     </div>
-    <div class="grid g2 rows" style="margin-top:36px">
-      <a class="card fcard sit" href="https://intheb.ag" rel="noopener"><div class="thumb"><img class="pic top" src="img/pair14-styled.webp" alt="" loading="lazy"></div><div><h4>I'm figuring out my personal style</h4></div></a>
-      <a class="card fcard sit" href="https://intheb.ag" rel="noopener"><div class="thumb"><img class="pic top" src="img/pair15-styled.webp" alt="" loading="lazy"></div><div><h4>My body has changed</h4></div></a>
-      <a class="card fcard sit" href="https://intheb.ag" rel="noopener"><div class="thumb"><img class="pic top" src="img/pair8-styled.webp" alt="" loading="lazy"></div><div><h4>Getting dressed feels stressful</h4></div></a>
-      <a class="card fcard sit" href="https://intheb.ag" rel="noopener"><div class="thumb"><img class="pic top" src="img/pair7-styled.webp" alt="" loading="lazy"></div><div><h4>I want to look more put together</h4></div></a>
-      <a class="card fcard sit" href="https://intheb.ag" rel="noopener"><div class="thumb"><img class="pic top" src="img/pair17-styled.webp" alt="" loading="lazy"></div><div><h4>I need better work outfits</h4></div></a>
-      <a class="card fcard sit" href="https://intheb.ag" rel="noopener"><div class="thumb"><img class="pic top" src="img/pair16-styled.webp" alt="" loading="lazy"></div><div><h4>I'm dating and going out more</h4></div></a>
-      <a class="card fcard sit" href="https://intheb.ag" rel="noopener"><div class="thumb"><img class="pic top" src="img/pair5-styled.webp" alt="" loading="lazy"></div><div><h4>I'm entering a new chapter</h4></div></a>
-      <a class="card fcard sit" href="https://intheb.ag" rel="noopener"><div class="thumb"><img class="pic top" src="img/pair6-styled.webp" alt="" loading="lazy"></div><div><h4>I need help for an event</h4></div></a>
-      <a class="card fcard sit" href="https://intheb.ag" rel="noopener"><div class="thumb"><img class="pic top" src="img/pair2-styled.webp" alt="" loading="lazy"></div><div><h4>I buy clothes but never know how to style them</h4></div></a>
-      <a class="card fcard sit" href="https://intheb.ag" rel="noopener"><div class="thumb"><img class="pic top" src="img/pair1-styled.webp" alt="" loading="lazy"></div><div><h4>I want a wardrobe that feels more like me</h4></div></a>
+    <div class="sitgrid" style="margin-top:28px">
+      <a class="sit" href="https://intheb.ag" rel="noopener"><img class="pic top" src="img/pair14-styled.webp" alt="" loading="lazy"><span>I'm figuring out my personal style</span></a>
+      <a class="sit" href="https://intheb.ag" rel="noopener"><img class="pic top" src="img/pair15-styled.webp" alt="" loading="lazy"><span>My body has changed</span></a>
+      <a class="sit" href="https://intheb.ag" rel="noopener"><img class="pic top" src="img/pair8-styled.webp" alt="" loading="lazy"><span>Getting dressed feels stressful</span></a>
+      <a class="sit" href="https://intheb.ag" rel="noopener"><img class="pic top" src="img/pair7-styled.webp" alt="" loading="lazy"><span>I want to look more put together</span></a>
+      <a class="sit" href="https://intheb.ag" rel="noopener"><img class="pic top" src="img/pair17-styled.webp" alt="" loading="lazy"><span>I need better work outfits</span></a>
+      <a class="sit" href="https://intheb.ag" rel="noopener"><img class="pic top" src="img/pair16-styled.webp" alt="" loading="lazy"><span>I'm dating and going out more</span></a>
+      <a class="sit" href="https://intheb.ag" rel="noopener"><img class="pic top" src="img/pair5-styled.webp" alt="" loading="lazy"><span>I'm entering a new chapter</span></a>
+      <a class="sit" href="https://intheb.ag" rel="noopener"><img class="pic top" src="img/pair6-styled.webp" alt="" loading="lazy"><span>I need help for an event</span></a>
+      <a class="sit" href="https://intheb.ag" rel="noopener"><img class="pic top" src="img/pair2-styled.webp" alt="" loading="lazy"><span>I buy clothes but never know how to style them</span></a>
+      <a class="sit" href="https://intheb.ag" rel="noopener"><img class="pic top" src="img/pair1-styled.webp" alt="" loading="lazy"><span>I want a wardrobe that feels more like me</span></a>
     </div>
   </div>
 </section>
