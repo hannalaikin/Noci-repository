@@ -313,8 +313,7 @@ section{padding-block:clamp(56px,9vw,120px)}
 <!-- HERO -->
 <section class="hero-film" id="hero">
   <div class="hero-video" aria-hidden="true">
-    <video class="hv on" id="hv0" autoplay muted playsinline preload="auto" poster="img/pair7-styled.webp" src="video/hero-a.mp4"></video>
-    <video class="hv" id="hv1" muted playsinline preload="auto" src="video/result.mp4"></video>
+    <video class="hv on" id="hv0" autoplay muted loop playsinline preload="auto" poster="img/hero-poster.jpg" src="video/hero.mp4"></video>
     <div class="hero-veil"></div>
   </div>
   <div class="wrap hero-copy">
@@ -393,7 +392,7 @@ section{padding-block:clamp(56px,9vw,120px)}
 </section>
 
 <!-- HOLLYWOOD -->
-<section class="still still-short"><img src="img/pair17-styled.webp" alt="" loading="lazy"><div class="still-veil"></div><div class="wrap still-copy"><span class="eyebrow" style="color:#B9A99C">Why a stylist</span><h2>Look like you have a stylist. <em>Because you do.</em></h2><p class="sub">Hollywood-level expertise, applied to a school run, a first day, a wedding, or a closet that stopped making sense.</p><div><a class="btn btn-light" href="https://intheb.ag" rel="noopener">Get styled</a></div></div></section>
+<section class="still still-short still-vid"><video class="band-vid" autoplay muted loop playsinline preload="metadata" poster="img/trench-poster.jpg" src="video/trench.mp4" aria-hidden="true"></video><div class="still-veil"></div><div class="wrap still-copy"><span class="eyebrow" style="color:#B9A99C">Why a stylist</span><h2>Look like you have a stylist. <em>Because you do.</em></h2><p class="sub">Hollywood-level expertise, applied to a school run, a first day, a wedding, or a closet that stopped making sense.</p><div><a class="btn btn-light" href="https://intheb.ag" rel="noopener">Get styled</a></div></div></section>
 
 <!-- STYLE READ -->
 <section class="band" id="style-read" style="padding-block:0">
@@ -1170,6 +1169,14 @@ section{padding-block:clamp(56px,9vw,120px)}
 .still-copy{position:relative;width:100%;padding-block:0 clamp(28px,5vw,56px);display:flex;flex-direction:column;gap:10px}
 .still-copy h2{color:#F7F3EE}.still-copy .sub{color:#E5D9CD}
 .still-short{min-height:60svh}
+.still-vid{background:#1A1411}
+.still-vid .band-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 22%}
+@media (min-width:761px){
+  .still-vid{min-height:calc(min(66svh,580px) + 128px);align-items:center;padding-block:64px}
+  .still-vid .band-vid{position:absolute;inset:auto clamp(24px,7vw,120px) auto auto;top:50%;transform:translateY(-50%);width:auto;height:min(66svh,580px);aspect-ratio:9/16;border-radius:14px;object-position:center 25%;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+  .still-vid .still-veil{background:none}
+  .still-vid .still-copy{padding-block:0;max-width:52%}
+}
 @media (max-width:640px){.still{min-height:64svh}.still-short{min-height:58svh}}
 
 /* footer */
@@ -1537,26 +1544,18 @@ footer{border-top:1px solid var(--line);padding-block:36px 48px;color:var(--mute
     window.addEventListener('scroll', onSc, {passive:true}); onSc();
   }
 
-  // Hero film: two stacked players, crossfade between clips (autoplay-safe)
-  var clips = ['video/hero-a.mp4','video/result.mp4','video/hero-b.mp4'];
-  var v = [document.getElementById('hv0'), document.getElementById('hv1')];
-  if (v[0] && v[1]){
-    var cur = 0, idx = 0;
+  // Hero film: one looping player (autoplay-safe)
+  var hv = document.getElementById('hv0');
+  if (hv){
     var tryPlay = function(el){ var p = el.play(); if (p && p.catch) p.catch(function(){}); };
-    var swap = function(){
-      var nxt = 1 - cur; idx = (idx + 1) % clips.length;
-      v[nxt].src = clips[idx]; v[nxt].load();
-      v[nxt].oncanplay = function(){ v[nxt].oncanplay = null; v[nxt].currentTime = 0; tryPlay(v[nxt]); v[nxt].classList.add('on'); v[cur].classList.remove('on'); cur = nxt; };
-    };
-    v.forEach(function(el){ el.addEventListener('ended', function(){ if (el === v[cur]) swap(); }); el.addEventListener('error', function(){ if (el === v[cur]) swap(); }); });
-    tryPlay(v[0]);
+    tryPlay(hv);
     // iOS: retry on first touch/scroll if autoplay was blocked
-    var kick = function(){ if (v[cur].paused) tryPlay(v[cur]); };
+    var kick = function(){ if (hv.paused) tryPlay(hv); };
     ['touchstart','scroll','click'].forEach(function(e){ window.addEventListener(e, kick, {passive:true, once:true}); });
     document.addEventListener('visibilitychange', function(){ if (!document.hidden) kick(); });
   }
-  // analysis-section video: same autoplay kick
-  document.querySelectorAll('.an-bg video').forEach(function(el){ var p = el.play(); if (p && p.catch) p.catch(function(){}); ['touchstart','scroll'].forEach(function(e){ window.addEventListener(e, function(){ if (el.paused) el.play().catch(function(){}); }, {passive:true, once:true}); }); });
+  // analysis-section + band videos: same autoplay kick
+  document.querySelectorAll('.an-bg video, .still video').forEach(function(el){ var p = el.play(); if (p && p.catch) p.catch(function(){}); ['touchstart','scroll'].forEach(function(e){ window.addEventListener(e, function(){ if (el.paused) el.play().catch(function(){}); }, {passive:true, once:true}); }); });
 
   // Film: tap for sound
   var film = document.getElementById('film'), fs = document.getElementById('filmSound');
