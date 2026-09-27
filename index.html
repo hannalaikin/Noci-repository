@@ -177,13 +177,13 @@ section{padding-block:clamp(56px,9vw,120px)}
 .nav-over.scrolled .brand span,.nav-over.scrolled .links a{color:var(--ink-2)}
 .nav-over.scrolled .btn{background:var(--pill);color:var(--pill-text);border-color:var(--pill)}
 .an-bg video{height:100%;width:auto;max-width:none;object-fit:cover;object-position:center top;opacity:.92;filter:saturate(.85) contrast(1.02)}
-@media (max-width:900px){.an-bg video{height:auto;width:100%}}
+
 
 /* photo slots + croquis */
 .photo{background:var(--photo);background-image:radial-gradient(120% 80% at 50% 0%,#FBF8F3 0%,var(--photo) 55%,var(--photo-2) 100%);border-radius:18px;overflow:hidden;position:relative}
 .photo svg{display:block;width:100%;height:100%}
 .pic{display:block;width:100%;height:100%;object-fit:cover;object-position:center center}
-.pic.top{object-position:center 14%}
+.pic.top{object-position:center top}
 .figwrap{position:relative;width:100%;height:100%}
 .figwrap .marks{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
 .photo .lbl{position:absolute;left:12px;bottom:12px;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;background:rgba(37,24,17,.86);color:#F7F3EE;padding:6px 10px;border-radius:999px}
@@ -569,9 +569,10 @@ section{padding-block:clamp(56px,9vw,120px)}
 @media (max-width:900px){
   .analysis{min-height:0}
   .an-in{min-height:0;gap:22px}
-  .an-bg{align-items:flex-start}
-  .an-bg img{height:auto;width:100%;max-height:none}
-  .an-cards{grid-template-columns:1fr 1fr;grid-template-rows:auto;margin-top:min(52vw,360px)}
+  .an-bg{top:250px;bottom:auto;height:64svh;align-items:flex-start}
+  .an-bg img,.an-bg video{height:100%;width:100%;max-height:none;object-fit:cover;object-position:center 8%}
+  .an-shade{background:linear-gradient(180deg,rgba(42,31,25,.96) 0%,rgba(42,31,25,.9) 240px,rgba(42,31,25,.1) 360px,rgba(42,31,25,.1) 60%,rgba(42,31,25,.9) 90%)}
+  .an-cards{grid-template-columns:1fr 1fr;grid-template-rows:auto;margin-top:34svh}
   .an-l1,.an-l2,.an-r1,.an-r2,.an-r3{grid-column:auto;grid-row:auto}
   .an-r3{grid-column:1/-1}
   .an-card{padding:12px}
@@ -590,7 +591,7 @@ section{padding-block:clamp(56px,9vw,120px)}
 .fcard .icon{width:52px;height:52px;border-radius:14px;background:var(--bg-soft);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--ink)}
 .fcard .icon svg{width:24px;height:24px}
 .fcard p{color:var(--ink-2);font-size:15px}
-.fcard .thumb{height:120px;border-radius:12px;background:var(--photo);position:relative;overflow:hidden}
+.fcard .thumb{aspect-ratio:4/5;border-radius:12px;background:var(--photo);position:relative;overflow:hidden}
 .fcard .thumb svg{position:absolute;inset:0;width:100%;height:100%}
 
 /* plan */
@@ -724,10 +725,10 @@ section{padding-block:clamp(56px,9vw,120px)}
     </div>
     <div class="grid g5" style="margin-top:36px">
       <div class="card fcard"><div class="thumb"><img class="pic top" src="img/pair8-styled.webp" alt="" loading="lazy"></div><h4>Body proportion</h4><p>Where your waist sits and your vertical line.</p></div>
-      <div class="card fcard"><div class="thumb"><img class="pic top" src="img/pair15-styled.webp" alt="" loading="lazy"></div><h4>Coloring and contrast</h4><p>Undertone, contrast, and your best neutrals.</p></div>
-      <div class="card fcard"><div class="thumb"><img class="pic top" src="img/pair17-styled.webp" alt="" loading="lazy"></div><h4>Your actual week</h4><p>Office, school run, dinner, travel.</p></div>
+      <div class="card fcard"><div class="thumb"><img class="pic top" src="img/pair17-styled.webp" alt="" loading="lazy"></div><h4>Coloring and contrast</h4><p>Undertone, contrast, and your best neutrals.</p></div>
+      <div class="card fcard"><div class="thumb"><img class="pic top" src="img/pair15-styled.webp" alt="" loading="lazy"></div><h4>Your actual week</h4><p>Office, school run, dinner, travel.</p></div>
       <div class="card fcard"><div class="thumb"><img class="pic top" src="img/pair14-wearing.webp" alt="" loading="lazy"></div><h4>Your existing closet</h4><p>What you wear on repeat, and the gaps.</p></div>
-      <div class="card fcard"><div class="thumb"><img class="pic top" src="img/pair16-wearing.webp" alt="" loading="lazy"></div><h4>Your taste and comfort</h4><p>How much attention you want.</p></div>
+      <div class="card fcard"><div class="thumb"><img class="pic top" src="img/pair14-styled.webp" alt="" loading="lazy"></div><h4>Your taste and comfort</h4><p>How much attention you want.</p></div>
     </div>
   </div>
 </section>
@@ -744,7 +745,7 @@ section{padding-block:clamp(56px,9vw,120px)}
       <div class="card fcard"><div class="thumb"><img class="pic top" src="img/pair5-styled.webp" alt="" loading="lazy"></div><h4>How each piece changes your look</h4><p>Why a rise or a hem reads the way it does.</p></div>
       <div class="card fcard"><div class="thumb"><img class="pic top" src="img/pair6-styled.webp" alt="" loading="lazy"></div><h4>The harmony of an outfit</h4><p>Why some combinations always look expensive.</p></div>
       <div class="card fcard"><div class="thumb"><img class="pic top" src="img/pair15-styled.webp" alt="" loading="lazy"></div><h4>Your highest-leverage swaps</h4><p>The few changes that move the whole look.</p></div>
-      <div class="card fcard"><div class="thumb"><img class="pic top" src="img/pair14-styled.webp" alt="" loading="lazy"></div><h4>The reasoning behind every pick</h4><p>So you can keep making good calls without us.</p></div>
+      <div class="card fcard"><div class="thumb"><img class="pic top" src="img/pair16-styled.webp" alt="" loading="lazy"></div><h4>The reasoning behind every pick</h4><p>So you can keep making good calls without us.</p></div>
     </div>
   </div>
 </section>
